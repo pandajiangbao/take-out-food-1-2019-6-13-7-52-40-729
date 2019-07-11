@@ -1,5 +1,6 @@
 function bestCharge(selectedItems) {
   let discount = 0
+  var promotionStr=''
   let promotionNames = []
   let total = 0
   let result = `\n============= 订餐明细 =============\n`
@@ -28,10 +29,6 @@ function bestCharge(selectedItems) {
     discount = 6
     var promotionType = loadPromotions()[0].type
     var promotionStr = `使用优惠:\n${promotionType}，省${discount}元\n-----------------------------------\n`
-  }
-  else if (total < 30 && discount === 0) {
-    discount = 0
-    var promotionStr = ``
   }
   result += `-----------------------------------\n` + promotionStr +`总计：${total-discount}元\n===================================`
   return result/*TODO*/
